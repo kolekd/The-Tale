@@ -8,7 +8,7 @@ import java.util.TimerTask;
 
 public class Board extends JComponent implements KeyListener {
 
-    public static int boardWidth = 64*12;
+    public static int boardWidth = 64*10;
     public static int boardHeight = 64*9;
     public static GameObject gameObject = new GameObject();
     HashMap<Integer, GameObject> gameObjectList = new HashMap<>();
