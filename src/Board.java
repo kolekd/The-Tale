@@ -8,8 +8,8 @@ import java.util.TimerTask;
 
 public class Board extends JComponent implements KeyListener {
 
-    public static int boardWidth = 64*10;
-    public static int boardHeight = 64*9;
+    public static int boardWidth = 64*6;
+    public static int boardHeight = 64*6;
     public static GameObject gameObject = new GameObject();
     HashMap<Integer, GameObject> gameObjectList = new HashMap<>();
 
@@ -21,8 +21,8 @@ public class Board extends JComponent implements KeyListener {
 
     public static void main(String[] args) {
 
-        GameObject mrRectangle = new GameObject("img/mrRectangle.png", (boardHeight/64)/2,(boardWidth/64)/2 + 2);
-        GameObject mrRectangle2 = new GameObject("img/mrRectangle2.png", (boardHeight/64)/2,(boardWidth/64)/2 - 2);
+        GameObject mrRectangle = new GameObject("img/mrRectangle.png", boardHeight/2,boardWidth/2 + 64);
+        GameObject mrRectangle2 = new GameObject("img/mrRectangle2.png", boardHeight/2,boardWidth/2 - 64);
 
         JFrame frame = new JFrame("RPG Game");
         Board board = new Board();
@@ -42,19 +42,21 @@ public class Board extends JComponent implements KeyListener {
     public void paint (Graphics graphics){
 
 
-//        System.out.println(gameObjectList);
+        System.out.println(gameObjectList);
 
         for (int i = 0; i < gameObjectList.size(); i++) {
             for (int j = 0; j < i; j++) {
                 if (i!=j && gameObjectList.get(i).samePosition(gameObjectList.get(j)) && gameObjectList.size() < 3){
                     colourMerge(gameObjectList.get(j), gameObjectList.get(i));
-                } else if (i!=j && gameObjectList.get(i).samePosition(gameObjectList.get(j)) && gameObjectList.size() == 3){
-                    colourMerge2(gameObjectList.get(j), gameObjectList.get(i));
                 }
             }
-            gameObjectList.get(i).draw(graphics);
+            if (gameObjectList.get(i).life > 0){
+                gameObjectList.get(i).draw(graphics);
+            } else {
+                gameObjectList.remove(gameObjectList.get(i));
+            }
 
-//            System.out.println(gameObjectList.get(i).filename + "  X: " + gameObjectList.get(i).posX + " Y: " + gameObjectList.get(i).posY);
+            System.out.println(gameObjectList.get(i).filename + "  X: " + gameObjectList.get(i).posX + " Y: " + gameObjectList.get(i).posY);
 
             randMovement(gameObjectList.get(i));
 
@@ -101,12 +103,14 @@ public class Board extends JComponent implements KeyListener {
     }
 
     public void colourMerge (GameObject o1, GameObject o2){
-        GameObject mrRectangleExtra = new GameObject(gameObject.getMergedColour(o1, o2), o2.posX/64, o2.posY/64);
+        SquareHalf mrRectangleExtra = new SquareHalf("img/mrRectangleYellowHalf.png", o2.posX, o2.posY);
+        SquareHalf mrRectangleExtra2 = new SquareHalf("img/mrRectangleYellowHalf.png", o2.posX+32, o2.posY-32);
         gameObjectList.put(gameObjectList.size(), mrRectangleExtra);
+        gameObjectList.put(gameObjectList.size(), mrRectangleExtra2);
     }
 
-    public void colourMerge2 (GameObject o1, GameObject o2){
-        GameObject mrRectangleExtra = new GameObject("img/mrRectangleOverlap2.png", o2.posX/64, o2.posY/64);
-        gameObjectList.put(gameObjectList.size(), mrRectangleExtra);
-    }
+//    public void colourMerge2 (GameObject o1, GameObject o2){
+//        GameObject mrRectangleExtra = new GameObject("img/mrRectangleOverlap2.png", o2.posX/64, o2.posY/64);
+//        gameObjectList.put(gameObjectList.size(), mrRectangleExtra);
+//    }
 }

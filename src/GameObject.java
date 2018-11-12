@@ -10,13 +10,15 @@ public class GameObject {
     BufferedImage image;
     int posX, posY;
     String filename;
-    int tileSize = 64;
+    int size;
+    int life = 100;
 
-
-    public GameObject(String filename, int posX, int posY){
-        this.posX = posX* tileSize;
-        this.posY = posY* tileSize;
+    public GameObject(String filename, int posX, int posY, int size, int life){
+        this.posX = posX* size;
+        this.posY = posY* size;
         this.filename = filename;
+        this.size = 64;
+        this.life = life;
         try{
             image = ImageIO.read(new File(filename));
         } catch (IOException e){
@@ -24,8 +26,10 @@ public class GameObject {
         }
     }
 
-    public GameObject(String filename){
+    public GameObject(String filename, int posX, int posY){
         this.filename=filename;
+        this.posX = posX;
+        this.posY = posY;
         try{
             image = ImageIO.read(new File(filename));
         } catch (IOException e){
@@ -51,14 +55,14 @@ public class GameObject {
     }
 
     public void move(String direction, int distance){
-        int convDist = distance*tileSize/2;
+        int convDist = distance*size/2;
         if (direction.equals("up") && posY > 0){
             posY-=convDist;
-        } else if (direction.equals("down") && posY < Board.boardHeight - tileSize){
+        } else if (direction.equals("down") && posY < Board.boardHeight - size){
             posY+=convDist;
         } else if (direction.equals("left") && posX > 0){
             posX-=convDist;
-        } else if (direction.equals("right") && posX < Board.boardWidth - tileSize){
+        } else if (direction.equals("right") && posX < Board.boardWidth - size){
             posX+=convDist;
         }
     }
@@ -77,9 +81,7 @@ public class GameObject {
     }
 
     public String getMergedColour (GameObject gameObject1, GameObject gameObject2){
-        String col1 = gameObject1.filename;
-        String col2 = gameObject2.filename;
-            return "img/mrRectangleOverlap.png";
+            return "img/mrRectangleYellowHalf.png";
     }
 
 }
