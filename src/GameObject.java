@@ -12,13 +12,15 @@ public class GameObject {
     String filename;
     int size = 64;
     int life = 100;
+    boolean fromMerge;
 
-    public GameObject(String filename, int posX, int posY, int size, int life){
+    public GameObject(String filename, int posX, int posY, int size, int life, boolean fromMerge){
         this.posX = posX* size;
         this.posY = posY* size;
         this.filename = filename;
         this.size = size;
         this.life = life;
+        this.fromMerge = fromMerge;
         try{
             image = ImageIO.read(new File(filename));
         } catch (IOException e){
@@ -27,8 +29,8 @@ public class GameObject {
     }
 
     public GameObject(String filename, int posX, int posY, int life){
-        this.posX = posX* size;
-        this.posY = posY* size;
+        this.posX = posX;
+        this.posY = posY;
         this.filename = filename;
         this.life = life;
         try{
@@ -39,10 +41,11 @@ public class GameObject {
     }
 
 
-    public GameObject(String filename, int posX, int posY){
+    public GameObject(String filename, int posX, int posY, boolean fromMerge){
         this.filename=filename;
         this.posX = posX;
         this.posY = posY;
+        this.fromMerge = fromMerge;
         try{
             image = ImageIO.read(new File(filename));
         } catch (IOException e){

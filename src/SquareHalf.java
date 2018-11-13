@@ -2,8 +2,9 @@ import java.awt.*;
 
 public class SquareHalf extends GameObject {
 
-    public SquareHalf(String filename, int posX, int posY) {
-        super(filename, posX, posY);
+
+    public SquareHalf(String filename, int posX, int posY, boolean fromMerge) {
+        super(filename, posX, posY, fromMerge);
 
         this.life = 100;
 
