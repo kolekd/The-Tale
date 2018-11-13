@@ -10,14 +10,14 @@ public class GameObject {
     BufferedImage image;
     int posX, posY;
     String filename;
-    int size;
+    int size = 64;
     int life = 100;
 
     public GameObject(String filename, int posX, int posY, int size, int life){
         this.posX = posX* size;
         this.posY = posY* size;
         this.filename = filename;
-        this.size = 64;
+        this.size = size;
         this.life = life;
         try{
             image = ImageIO.read(new File(filename));
@@ -25,6 +25,19 @@ public class GameObject {
             e.printStackTrace();
         }
     }
+
+    public GameObject(String filename, int posX, int posY, int life){
+        this.posX = posX* size;
+        this.posY = posY* size;
+        this.filename = filename;
+        this.life = life;
+        try{
+            image = ImageIO.read(new File(filename));
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
 
     public GameObject(String filename, int posX, int posY){
         this.filename=filename;

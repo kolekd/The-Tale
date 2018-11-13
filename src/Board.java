@@ -2,9 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.TimerTask;
 
 public class Board extends JComponent implements KeyListener {
 
@@ -12,7 +10,6 @@ public class Board extends JComponent implements KeyListener {
     public static int boardHeight = 64*6;
     public static GameObject gameObject = new GameObject();
     HashMap<Integer, GameObject> gameObjectList = new HashMap<>();
-
 
     public Board(){
         setPreferredSize(new Dimension(boardWidth,boardHeight));
@@ -52,14 +49,17 @@ public class Board extends JComponent implements KeyListener {
             }
             if (gameObjectList.get(i).life > 0){
                 gameObjectList.get(i).draw(graphics);
+
+                System.out.println(gameObjectList.get(i).filename + "  X: " + gameObjectList.get(i).posX + " Y: "
+                        + gameObjectList.get(i).posY + "   Life: " + gameObjectList.get(i).life
+                        + "   Size: " + gameObjectList.get(i).size);
+
+                randMovement(gameObjectList.get(i));
+
             } else {
-                gameObjectList.remove(gameObjectList.get(i));
+//                splitSquare(gameObjectList.get(gameObjectList.size() - 1));
+                gameObjectList.remove(gameObjectList.size() - 1);
             }
-
-            System.out.println(gameObjectList.get(i).filename + "  X: " + gameObjectList.get(i).posX + " Y: " + gameObjectList.get(i).posY);
-
-            randMovement(gameObjectList.get(i));
-
         }
 
         try {
@@ -103,14 +103,18 @@ public class Board extends JComponent implements KeyListener {
     }
 
     public void colourMerge (GameObject o1, GameObject o2){
-        SquareHalf mrRectangleExtra = new SquareHalf("img/mrRectangleYellowHalf.png", o2.posX, o2.posY);
-        SquareHalf mrRectangleExtra2 = new SquareHalf("img/mrRectangleYellowHalf.png", o2.posX+32, o2.posY-32);
+        SquareHalf mrRectangleExtra = new SquareHalf("img/mrRectanglePurpleHalf.png", o2.posX, o2.posY);
+        SquareHalf mrRectangleExtra2 = new SquareHalf("img/mrRectanglePurpleHalf.png", o2.posX+32, o2.posY-32);
         gameObjectList.put(gameObjectList.size(), mrRectangleExtra);
         gameObjectList.put(gameObjectList.size(), mrRectangleExtra2);
     }
 
-//    public void colourMerge2 (GameObject o1, GameObject o2){
-//        GameObject mrRectangleExtra = new GameObject("img/mrRectangleOverlap2.png", o2.posX/64, o2.posY/64);
-//        gameObjectList.put(gameObjectList.size(), mrRectangleExtra);
-//    }
+    public void splitSquare(GameObject object) {
+        SquareHalf mrRectangleExtra = new SquareHalf("img/mrRectangleGreenQuarter.png", object.posX, object.posY);
+        SquareHalf mrRectangleExtra2 = new SquareHalf("img/mrRectangleGreenQuarter.png", object.posX, object.posY);
+        gameObjectList.put(gameObjectList.size(), mrRectangleExtra);
+        gameObjectList.put(gameObjectList.size(), mrRectangleExtra2);
+
+    }
+
 }
