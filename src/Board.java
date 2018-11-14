@@ -40,14 +40,15 @@ public class Board extends JComponent implements KeyListener {
 
         System.out.println("============================================");
 
-        for (int i = 0; i < gameObjectList.size(); i++) {
-            for (int j = 0; j < i; j++) {
-                if (i!=j && gameObjectList.get(i).samePosition(gameObjectList.get(j)) && gameObjectList.size() < 3){
-                    colourMerge(gameObjectList.get(j), gameObjectList.get(i));
-                }
-            }
 
+        for (int i = 0; i < gameObjectList.size(); i++) {
             if (gameObjectList.get(i).life > 0){
+                for (int j = 0; j < i; j++) {
+                    if (i!=j && gameObjectList.get(i).samePosition(gameObjectList.get(j)) && gameObjectList.size() < 3){
+                        colourMerge(gameObjectList.get(j), gameObjectList.get(i));
+                    }
+                }
+
                 gameObjectList.get(i).draw(graphics);
 
                 System.out.println(gameObjectList.get(i).filename + " " + gameObjectList.get(i) + "  X: " + gameObjectList.get(i).posX + " Y: "
@@ -62,12 +63,10 @@ public class Board extends JComponent implements KeyListener {
                     splitSquare(gameObjectList.get(i));
                 }
 
-                for (int j = 0; j < gameObjectList.size(); j++) {
-                    if (gameObjectList.get(i).life == 0){
-                        gameObjectList.remove(gameObjectList.get(i));
-                    }
+                if (gameObjectList.get(i).life < 1){
+                    gameObjectList.remove(i);
+                    i--;
                 }
-
             }
         }
 
