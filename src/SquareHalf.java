@@ -3,11 +3,8 @@ import java.awt.*;
 public class SquareHalf extends GameObject {
 
 
-    public SquareHalf(String filename, int posX, int posY, boolean fromMerge) {
-        super(filename, posX, posY, fromMerge);
-
-        this.life = 100;
-
+    public SquareHalf(String filename, int posX, int posY, int size, int life, boolean fromMerge) {
+        super(filename, posX, posY, size, life, fromMerge);
     }
 
     @Override
@@ -15,5 +12,10 @@ public class SquareHalf extends GameObject {
         super.draw(graphics);
 
         life--;
+    }
+
+    @Override
+    public void move(String direction, int distance) {
+        super.move(direction, distance * 2);
     }
 }

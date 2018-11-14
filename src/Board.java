@@ -18,8 +18,8 @@ public class Board extends JComponent implements KeyListener {
 
     public static void main(String[] args) {
 
-        GameObject mrRectangle = new GameObject("img/mrRectangle.png", boardHeight/2,boardWidth/2 + 64, false);
-        GameObject mrRectangle2 = new GameObject("img/mrRectangle2.png", boardHeight/2,boardWidth/2 - 64, false);
+        GameObject mrRectangle = new GameObject("img/mrRectangle.png", boardHeight/2,boardWidth/2 + 64, 64, 100, false);
+        GameObject mrRectangle2 = new GameObject("img/mrRectangle2.png", boardHeight/2,boardWidth/2 - 64, 64, 100, false);
 
         JFrame frame = new JFrame("RPG Game");
         Board board = new Board();
@@ -46,6 +46,7 @@ public class Board extends JComponent implements KeyListener {
                     colourMerge(gameObjectList.get(j), gameObjectList.get(i));
                 }
             }
+
             if (gameObjectList.get(i).life > 0){
                 gameObjectList.get(i).draw(graphics);
 
@@ -56,7 +57,8 @@ public class Board extends JComponent implements KeyListener {
                 randMovement(gameObjectList.get(i));
 
             } else {
-                if (gameObjectList.size() < 9 && gameObjectList.get(i).fromMerge){
+
+                if (gameObjectList.size() < 7 && gameObjectList.get(i).fromMerge){
                     splitSquare(gameObjectList.get(i));
                 }
 
@@ -113,17 +115,17 @@ public class Board extends JComponent implements KeyListener {
     }
 
     public void colourMerge (GameObject o1, GameObject o2){
-        SquareHalf mrRectangleExtra = new SquareHalf("img/mrRectanglePurpleHalf.png", o2.posX, o2.posY, true);
-        SquareHalf mrRectangleExtra2 = new SquareHalf("img/mrRectanglePurpleHalf.png", o2.posX+32, o2.posY+32, true);
+        SquareHalf mrRectangleExtra = new SquareHalf("img/mrRectanglePurpleHalf.png", o2.posX, o2.posY, 32, 100, true);
+        SquareHalf mrRectangleExtra2 = new SquareHalf("img/mrRectanglePurpleHalf.png", o2.posX+32, o2.posY+32, 32, 100, true);
         gameObjectList.put(gameObjectList.size(), mrRectangleExtra);
         gameObjectList.put(gameObjectList.size(), mrRectangleExtra2);
     }
 
     public void splitSquare(GameObject object) {
         SquareHalf mrRectangleExtra
-                = new SquareHalf("img/mrRectangleGreenQuarter.png", object.posX, object.posY, false);
+                = new SquareHalf("img/mrRectangleGreenQuarter.png", object.posX, object.posY, 16, 100, false);
         SquareHalf mrRectangleExtra2
-                = new SquareHalf("img/mrRectangleGreenQuarter.png", object.posX+32, object.posY+32, false);
+                = new SquareHalf("img/mrRectangleGreenQuarter.png", object.posX+32, object.posY+32, 16, 100, false);
         gameObjectList.put(gameObjectList.size(), mrRectangleExtra);
         gameObjectList.put(gameObjectList.size(), mrRectangleExtra2);
 

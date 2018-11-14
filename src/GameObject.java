@@ -10,13 +10,13 @@ public class GameObject {
     BufferedImage image;
     int posX, posY;
     String filename;
-    int size = 64;
-    int life = 100;
+    int size;
+    int life;
     boolean fromMerge;
 
     public GameObject(String filename, int posX, int posY, int size, int life, boolean fromMerge){
-        this.posX = posX* size;
-        this.posY = posY* size;
+        this.posX = posX;
+        this.posY = posY;
         this.filename = filename;
         this.size = size;
         this.life = life;
