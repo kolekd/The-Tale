@@ -72,6 +72,10 @@ public class GameObject {
     public GameObject(){
     }
 
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
     public void draw(Graphics graphics){
         if (image != null) {
             graphics.drawImage(image, posX, posY, null);
@@ -81,11 +85,11 @@ public class GameObject {
 
     public void move(int boardHeight, int boardWidth, String direction, int distance){
         int convDist = distance*64/4;
-        if (direction.equals("up") && posY > 0){
+        if (direction.equals("up") && posY > 200){
             posY-=convDist;
         } else if (direction.equals("down") && posY < boardHeight - size){
             posY+=convDist;
-        } else if (direction.equals("left") && posX > 0){
+        } else if (direction.equals("left") && posX > 200){
             posX-=convDist;
         } else if (direction.equals("right") && posX < boardWidth - size){
             posX+=convDist;
@@ -98,7 +102,7 @@ public class GameObject {
 
     public boolean almostSamePosition (GameObject gameobject){
         return this.posX == gameobject.posX && this.posY == gameobject.posY ||
-               this.posY == gameobject.posY + 16;
+               this.posX == gameobject.posX && this.posY == gameobject.posY + 16;
     }
 
     public String[] whichWayIsFriend (GameObject gameobject){

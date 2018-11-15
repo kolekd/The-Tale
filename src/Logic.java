@@ -19,9 +19,9 @@ public class Logic {
         int boardHeight = height * tileSize;
         int boardWidth = width * tileSize;
 
-        GameObject aze = new GameObject("img/mrRectangle.png", 128, boardHeight/2 - 128,
+        GameObject aze = new GameObject("img/mrRectangle.png", 128, boardHeight/2 +64,
                64, 100, "first",100);
-        GameObject eve = new GameObject("img/mrRectangle2.png", boardWidth - 128, boardHeight/2 + 64,
+        GameObject eve = new GameObject("img/mrRectangle2.png", boardWidth - 128, boardHeight/2 + 192,
                64, 100, "first");
 
         gameObjectList.add(aze);
@@ -34,8 +34,10 @@ public class Logic {
                 + "   Size: " + gameObjectList.get(0).size + "   Mood: " + gameObjectList.get(0).mood);
 
         if (gameObjectList.get(0).mood > 250){
+            gameObjectList.get(0).changePNG("img/mrRectangleHeart.png");
             motivatedMovement(gameObjectList.get(0), gameObjectList.get(1));
         } else {
+            gameObjectList.get(0).changePNG("img/mrRectangle.png");
             randMovement(gameObjectList.get(0));
         }
 
