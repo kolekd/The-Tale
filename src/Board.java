@@ -11,7 +11,7 @@ public class Board extends JComponent implements KeyListener {
 //    public static int boardHeight = 64*6;
 //    ArrayList<GameObject> gameObjectList = new ArrayList<>();
 //    GameObject gameObject = new GameObject();
-    Logic logic = new Logic(64,6,12);
+    Logic logic = new Logic(64,9,18);
 
     public Board(){
 

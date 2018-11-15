@@ -16,6 +16,6 @@ public class SquareHalf extends GameObject {
 
     @Override
     public void move(int boardHeight, int boardWidth, String direction, int distance) {
-        super.move(boardHeight, boardWidth, direction, distance * 2);
+        super.move(boardHeight, boardWidth, direction, distance);
     }
 }

@@ -19,9 +19,9 @@ public class Logic {
         int boardHeight = height * tileSize;
         int boardWidth = width * tileSize;
 
-        GameObject aze = new GameObject("img/mrRectangle.png", boardWidth/2 - 128, boardHeight/2,
-               64, 100, "first");
-        GameObject eve = new GameObject("img/mrRectangle2.png", boardWidth/2 + 128, boardHeight/2,
+        GameObject aze = new GameObject("img/mrRectangle.png", 128, boardHeight/2 - 128,
+               64, 100, "first",100);
+        GameObject eve = new GameObject("img/mrRectangle2.png", boardWidth - 128, boardHeight/2 + 64,
                64, 100, "first");
 
         gameObjectList.add(aze);
@@ -29,13 +29,24 @@ public class Logic {
    }
 
     public void checkAllObjects(){
+        System.out.println(gameObjectList.get(0).filename + " " + gameObjectList.get(0) + "  X: " + gameObjectList.get(0).posX + " Y: "
+                + gameObjectList.get(0).posY + "   Life: " + gameObjectList.get(0).life
+                + "   Size: " + gameObjectList.get(0).size + "   Mood: " + gameObjectList.get(0).mood);
 
-        for (int i = 0; i < gameObjectList.size(); i++) {
+        if (gameObjectList.get(0).mood > 250){
+            motivatedMovement(gameObjectList.get(0), gameObjectList.get(1));
+        } else {
+            randMovement(gameObjectList.get(0));
+        }
+
+        for (int i = 1; i < gameObjectList.size(); i++) {
             if (gameObjectList.get(i).life > 0){
-                for (int j = 0; j < i; j++) {
-                    if (i!=j && gameObjectList.get(i).samePosition(gameObjectList.get(j)) && gameObjectList.size() < 3){
-                        reproduce(gameObjectList.get(i));
-                    }
+
+                if (gameObjectList.get(0).samePosition(gameObjectList.get(1)) &&
+                    gameObjectList.get(0).mood > 250 ||
+                    gameObjectList.get(0).almostSamePosition(gameObjectList.get(1)) &&
+                    gameObjectList.get(0).mood > 250) {
+                    reproduce(gameObjectList.get(i));
                 }
 
                 System.out.println(gameObjectList.get(i).filename + " " + gameObjectList.get(i) + "  X: " + gameObjectList.get(i).posX + " Y: "
@@ -65,25 +76,41 @@ public class Logic {
 
     }
 
-    public void randMovement(GameObject gameObject){
-        gameObject.move(height * tileSize, width * tileSize, randomDir(),1);
+    public void randMovement(GameObject gameobject){
+        gameobject.move(height * tileSize, width * tileSize, randomDir(),1);
 //      TODO:  repaint();
     }
 
-    public void reproduce (GameObject o2){
-        SquareHalf purpleDescendant = new SquareHalf("img/mrRectanglePurpleHalf.png", o2.posX, o2.posY, 32, 100, "purple");
-        SquareHalf purpleDescendant2 = new SquareHalf("img/mrRectanglePurpleHalf.png", o2.posX, o2.posY, 32, 100, "purple");
-        gameObjectList.add(purpleDescendant);
-        gameObjectList.add(purpleDescendant2);
+    public void motivatedMovement (GameObject gameObject1, GameObject gameObject2){
+        if (gameObject1.whichWayIsFriend(gameObject2)[0].equals("left")){
+            gameObject1.move(height * tileSize, width * tileSize, "left",1);
+        } else if (gameObject1.whichWayIsFriend(gameObject2)[0].equals("right")){
+            gameObject1.move(height * tileSize, width * tileSize, "right",1);
+        } else if (gameObject1.whichWayIsFriend(gameObject2)[1].equals("up")){
+            gameObject1.move(height * tileSize, width * tileSize, "up",1);
+        } else if (gameObject1.whichWayIsFriend(gameObject2)[1].equals("down")) {
+            gameObject1.move(height * tileSize, width * tileSize, "down", 1);
+        }
     }
 
-    public void splitSquare(GameObject object) {
+    public void reproduce (GameObject gameobject){
+        SquareHalf purpleDescendant = new SquareHalf("img/mrRectanglePurpleHalf.png", gameobject.posX, gameobject.posY,
+                32, 70 + getRand0toX(30), "purple");
+        SquareHalf purpleDescendant2 = new SquareHalf("img/mrRectanglePurpleHalf.png", gameobject.posX, gameobject.posY,
+                32, 90 + getRand0toX(30), "purple");
+        gameObjectList.add(purpleDescendant);
+        gameObjectList.add(purpleDescendant2);
+
+        gameObjectList.get(0).mood = 0;
+    }
+
+    public void splitSquare(GameObject gameobject) {
         SquareHalf greenDescendat
-                = new SquareHalf("img/mrRectangleGreenQuarter.png", object.posX, object.posY,
-                16, 100 + getRand0toX(60), "green");
+                = new SquareHalf("img/mrRectangleGreenQuarter.png", gameobject.posX, gameobject.posY,
+                16, 100 + getRand0toX(20), "green");
         SquareHalf greenDescendat2
-                = new SquareHalf("img/mrRectangleGreenQuarter.png", object.posX+32, object.posY+32,
-                16, 100 + getRand0toX(60), "green");
+                = new SquareHalf("img/mrRectangleGreenQuarter.png", gameobject.posX+32, gameobject.posY+32,
+                16, 100 + getRand0toX(20), "green");
         gameObjectList.add(greenDescendat);
         gameObjectList.add(greenDescendat2);
 
