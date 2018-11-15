@@ -8,8 +8,6 @@ import java.util.HashMap;
 public class Board extends JComponent implements KeyListener {
 
     Logic logic = new Logic(64,11,18);
-    Color myGreen = new Color(172, 255, 85);
-    Color myBlue = new Color(197, 215, 255);
 
     public Board(){
 
@@ -38,11 +36,11 @@ public class Board extends JComponent implements KeyListener {
         System.out.println("============================================");     System.out.println();
         System.out.println(logic.gameObjectList);                               System.out.println();
 
-        graphics.setColor(myBlue);
+        graphics.setColor(new Color(197, 215, 255));
         graphics.fillRect(0,0,1152,189);
         graphics.setColor(Color.black);
         graphics.fillRect(0,189,1152,1);
-        graphics.setColor(myGreen);
+        graphics.setColor(new Color(172, 255, 85));
         graphics.fillRect(0,190,1152,520);
 
         logic.checkAllObjects();
