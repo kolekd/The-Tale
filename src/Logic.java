@@ -5,6 +5,8 @@ public class Logic {
     int tileSize;
     int height;
     int width;
+    int time;
+    int darkening;
 
     ArrayList<GameObject> gameObjectList = new ArrayList<>();
 
@@ -13,6 +15,8 @@ public class Logic {
         this.tileSize = tileSize;
         this.height = height;
         this.width = width;
+        this.time = 0;
+        this.darkening = 0;
     }
 
     public void initiateLife(){
@@ -70,8 +74,36 @@ public class Logic {
             }
         }
 
+        if (time > 2802){
+            time = 0;
+        }
+
+        System.out.println(time);
+
+        if (time == 2702) {
+            darkening = 0;
+        }
+
+        if (time > 1000 && time <= 1351){
+            if(time % 1 == 0){
+                darkening += 1;
+            }
+        }
+
+        if (time == 1352) {
+            darkening = 175;
+        }
+
+        else if (time > 2350 && time < 2702){
+            if(time % 1 == 0){
+                darkening -= 1;
+            }
+        }
+
+        time += 2;
+
         try {
-            Thread.sleep(50);
+            Thread.sleep(20);
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
