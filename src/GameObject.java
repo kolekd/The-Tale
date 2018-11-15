@@ -12,15 +12,16 @@ public class GameObject {
     String filename;
     int size;
     int life;
-    boolean fromMerge;
+//    boolean fromMerge;
+    String type;
 
-    public GameObject(String filename, int posX, int posY, int size, int life, boolean fromMerge){
+    public GameObject(String filename, int posX, int posY, int size, int life, String type){
         this.posX = posX;
         this.posY = posY;
         this.filename = filename;
         this.size = size;
         this.life = life;
-        this.fromMerge = fromMerge;
+        this.type = type;
         try{
             image = ImageIO.read(new File(filename));
         } catch (IOException e){
@@ -40,12 +41,11 @@ public class GameObject {
         }
     }
 
-
-    public GameObject(String filename, int posX, int posY, boolean fromMerge){
+    public GameObject(String filename, int posX, int posY, String type){
         this.filename=filename;
         this.posX = posX;
         this.posY = posY;
-        this.fromMerge = fromMerge;
+        this.type = type;
         try{
             image = ImageIO.read(new File(filename));
         } catch (IOException e){
@@ -62,42 +62,29 @@ public class GameObject {
         }
     }
 
-    public void changePNG(String filename){
-        try {
-            image = ImageIO.read(new File(filename));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void move(String direction, int distance){
+    public void move(int boardHeight, int boardWidth, String direction, int distance){
         int convDist = distance*size/2;
         if (direction.equals("up") && posY > 0){
             posY-=convDist;
-        } else if (direction.equals("down") && posY < Board.boardHeight - size){
+        } else if (direction.equals("down") && posY < boardHeight - size){
             posY+=convDist;
         } else if (direction.equals("left") && posX > 0){
             posX-=convDist;
-        } else if (direction.equals("right") && posX < Board.boardWidth - size){
+        } else if (direction.equals("right") && posX < boardWidth - size){
             posX+=convDist;
         }
-    }
-
-    public String randomDir (){
-        String[] directions = {"right", "left", "up", "down"};
-        return directions[getRand0toX(3)];
-    }
-
-    public int getRand0toX(int x){
-        return (int)(Math.random() * ((x - 0) + 1)) + 0;
     }
 
     public boolean samePosition (GameObject o){
         return this.posX == o.posX && this.posY == o.posY;
     }
 
-    public String getMergedColour (GameObject gameObject1, GameObject gameObject2){
-            return "img/mrRectangleYellowHalf.png";
+    public void changePNG(String filename){
+        try {
+            image = ImageIO.read(new File(filename));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
