@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class Board extends JComponent implements KeyListener {
 
-    Logic logic = new Logic(64,11,18);
+    Logic logic = new Logic(64,11,18);                // Define the canvas's dimensions.
 
     public Board(){
 
@@ -36,20 +36,20 @@ public class Board extends JComponent implements KeyListener {
         System.out.println("============================================");     System.out.println();
         System.out.println(logic.gameObjectList);                               System.out.println();
 
-        graphics.setColor(new Color(197, 215, 255));
+        graphics.setColor(new Color(197, 215, 255));            // The grass and the sky.
         graphics.fillRect(0,0,1152,189);
         graphics.setColor(Color.black);
         graphics.fillRect(0,189,1152,1);
         graphics.setColor(new Color(172, 255, 85));
         graphics.fillRect(0,190,1152,520);
 
-        logic.checkAllObjects();
+        logic.checkAllObjects();                                        // Applies all the mechanics.
 
-        for(GameObject g : logic.gameObjectList){
+        for(GameObject g : logic.gameObjectList){                       // Draws present objects.
             g.draw(graphics);
         }
 
-        graphics.setColor(new Color(0,0,0, logic.darkening));
+        graphics.setColor(new Color(0,0,0, logic.darkening));   // The Sun, The Moon and The veil of the night.
         graphics.fillRect(0,0,1152,710);
         graphics.setColor(Color.yellow);
         graphics.fillOval(-100 + logic.time,60,62,62);
@@ -59,7 +59,7 @@ public class Board extends JComponent implements KeyListener {
 
         repaint();
 
-    }
+    }                          // Draws on the canvas.
 
     public void drawStars (int darkening, Graphics graphics){
         graphics.setColor(new Color (255,255,255, darkening));
@@ -98,7 +98,7 @@ public class Board extends JComponent implements KeyListener {
         graphics.fillOval(1080,54,5,5);
         graphics.fillOval(1124,140,5,5);
         graphics.fillOval(1140,155,5,5);
-    }
+    }       // Function to draw the stars.
 
     @Override
     public void keyTyped(KeyEvent e) {
