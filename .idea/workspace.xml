@@ -13,17 +13,20 @@
     <session id="-1429665544">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="22" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="5" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.3" value="2" />
+          <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.73" value="1" />
+          <entry key="project.open.time.74" value="1" />
           <entry key="project.open.time.75" value="1" />
           <entry key="project.open.time.77" value="3" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.open.time.84" value="1" />
+          <entry key="project.opened" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -38,12 +41,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="14461" />
+          <entry key="java" value="14464" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14461" />
+          <entry key="JAVA" value="14464" />
         </counts>
       </usages-collector>
     </session>
@@ -53,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="231">
+              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
               <folding>
                 <element signature="method#Board#0;class#Board#0" />
                 <element signature="method#main#0;class#Board#0" />
@@ -71,15 +74,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Logic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+            <state relative-caret-position="294">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="method#Logic#0;class#Logic#0" />
                 <element signature="method#initiateLife#0;class#Logic#0" />
                 <element signature="method#checkAllObjects#0;class#Logic#0" />
                 <element signature="method#randMovement#0;class#Logic#0" />
                 <element signature="method#motivatedMovement#0;class#Logic#0" />
-                <element signature="e#5437#5535#0" />
                 <element signature="method#reproduce#0;class#Logic#0" />
                 <element signature="method#splitSquare#0;class#Logic#0" />
                 <element signature="method#randomDir#0;class#Logic#0" />
@@ -91,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="67" column="48" lean-forward="true" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+            <state relative-caret-position="357">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
               <folding>
                 <element signature="method#GameObject#0;class#GameObject#0" />
                 <element signature="method#GameObject#1;class#GameObject#0" />
@@ -110,11 +112,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SquareHalf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="104" selection-start-line="4" selection-start-column="104" selection-end-line="4" selection-end-column="104" />
+            <state relative-caret-position="273">
+              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding>
                 <element signature="method#SquareHalf#0;class#SquareHalf#0" />
-                <element signature="method#draw#0;class#SquareHalf#0" />
               </folding>
             </state>
           </provider>
@@ -166,9 +167,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="800" />
-    <option name="width" value="800" />
-    <option name="height" value="900" />
+    <option name="x" value="-8" />
+    <option name="width" value="1612" />
+    <option name="height" value="912" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -177,7 +178,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,13 +199,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542360217824" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wanderer-java" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542460319228" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -265,18 +266,23 @@
       <workItem from="1542186974618" duration="6141000" />
       <workItem from="1542268944243" duration="24684000" />
       <workItem from="1542310128244" duration="1529000" />
-      <workItem from="1542354840322" duration="5239000" />
+      <workItem from="1542354840322" duration="12337000" />
+      <workItem from="1542371981054" duration="1813000" />
+      <workItem from="1542408066761" duration="228000" />
+      <workItem from="1542447323074" duration="545000" />
+      <workItem from="1542624750351" duration="275000" />
+      <workItem from="1542639482573" duration="262000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80661000" />
+    <option name="totallyTimeSpent" value="90882000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14652957" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15616967" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -285,7 +291,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32908162" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18112245" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18112245" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39923468" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -319,21 +325,43 @@
     <entry file="file://$PROJECT_DIR$/src/SquareQuarter.java" />
     <entry file="file://$PROJECT_DIR$/src/GameObjectList.java" />
     <entry file="file://$PROJECT_DIR$/src/SquareChaser.java" />
-    <entry file="file://$PROJECT_DIR$/src/SquareHalf.java">
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="104" selection-start-line="4" selection-start-column="104" selection-end-line="4" selection-end-column="104" />
+        <state relative-caret-position="231">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
           <folding>
-            <element signature="method#SquareHalf#0;class#SquareHalf#0" />
-            <element signature="method#draw#0;class#SquareHalf#0" />
+            <element signature="method#Board#0;class#Board#0" />
+            <element signature="method#main#0;class#Board#0" />
+            <element signature="method#paint#0;class#Board#0" />
+            <element signature="method#drawStars#0;class#Board#0" />
+            <element signature="method#keyTyped#0;class#Board#0" />
+            <element signature="method#keyPressed#0;class#Board#0" />
+            <element signature="method#keyReleased#0;class#Board#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="method#Logic#0;class#Logic#0" />
+            <element signature="method#initiateLife#0;class#Logic#0" />
+            <element signature="method#checkAllObjects#0;class#Logic#0" />
+            <element signature="method#randMovement#0;class#Logic#0" />
+            <element signature="method#motivatedMovement#0;class#Logic#0" />
+            <element signature="method#reproduce#0;class#Logic#0" />
+            <element signature="method#splitSquare#0;class#Logic#0" />
+            <element signature="method#randomDir#0;class#Logic#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="67" column="48" lean-forward="true" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+        <state relative-caret-position="357">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
           <folding>
             <element signature="method#GameObject#0;class#GameObject#0" />
             <element signature="method#GameObject#1;class#GameObject#0" />
@@ -347,36 +375,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic.java">
+    <entry file="file://$PROJECT_DIR$/src/SquareHalf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+        <state relative-caret-position="273">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
-            <element signature="method#Logic#0;class#Logic#0" />
-            <element signature="method#initiateLife#0;class#Logic#0" />
-            <element signature="method#checkAllObjects#0;class#Logic#0" />
-            <element signature="method#randMovement#0;class#Logic#0" />
-            <element signature="method#motivatedMovement#0;class#Logic#0" />
-            <element signature="e#5437#5535#0" />
-            <element signature="method#reproduce#0;class#Logic#0" />
-            <element signature="method#splitSquare#0;class#Logic#0" />
-            <element signature="method#randomDir#0;class#Logic#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="method#Board#0;class#Board#0" />
-            <element signature="method#main#0;class#Board#0" />
-            <element signature="method#paint#0;class#Board#0" />
-            <element signature="method#drawStars#0;class#Board#0" />
-            <element signature="method#keyTyped#0;class#Board#0" />
-            <element signature="method#keyPressed#0;class#Board#0" />
-            <element signature="method#keyReleased#0;class#Board#0" />
+            <element signature="method#SquareHalf#0;class#SquareHalf#0" />
           </folding>
         </state>
       </provider>
