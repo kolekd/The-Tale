@@ -5,5 +5,7 @@ Created using Java 9's Board class.
 
 Screenshots:  
 <img width="320" alt="squares_day" src="https://raw.githubusercontent.com/kolekd/The-Tale/master/img/screenshots/SquaresDay.png">  
+
 <img width="320" alt="squares_day" src="https://raw.githubusercontent.com/kolekd/The-Tale/master/img/screenshots/SquaresDayHeart.png">  
+
 <img width="320" alt="squares_day" src="https://raw.githubusercontent.com/kolekd/The-Tale/master/img/screenshots/SquaresNight.png">  
