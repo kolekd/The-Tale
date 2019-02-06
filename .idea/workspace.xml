@@ -13,20 +13,21 @@
     <session id="-1429665544">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="23" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="5" />
+          <entry key="project.open.time.2" value="6" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.55" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.73" value="1" />
           <entry key="project.open.time.74" value="1" />
           <entry key="project.open.time.75" value="1" />
           <entry key="project.open.time.77" value="3" />
           <entry key="project.open.time.84" value="1" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -56,17 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-              <folding>
-                <element signature="method#Board#0;class#Board#0" />
-                <element signature="method#main#0;class#Board#0" />
-                <element signature="method#paint#0;class#Board#0" />
-                <element signature="method#drawStars#0;class#Board#0" />
-                <element signature="method#keyTyped#0;class#Board#0" />
-                <element signature="method#keyPressed#0;class#Board#0" />
-                <element signature="method#keyReleased#0;class#Board#0" />
-              </folding>
+            <state relative-caret-position="273">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -74,18 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Logic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="method#Logic#0;class#Logic#0" />
-                <element signature="method#initiateLife#0;class#Logic#0" />
-                <element signature="method#checkAllObjects#0;class#Logic#0" />
-                <element signature="method#randMovement#0;class#Logic#0" />
-                <element signature="method#motivatedMovement#0;class#Logic#0" />
-                <element signature="method#reproduce#0;class#Logic#0" />
-                <element signature="method#splitSquare#0;class#Logic#0" />
-                <element signature="method#randomDir#0;class#Logic#0" />
-              </folding>
+            <state relative-caret-position="378">
+              <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -272,17 +254,19 @@
       <workItem from="1542447323074" duration="545000" />
       <workItem from="1542624750351" duration="275000" />
       <workItem from="1542639482573" duration="262000" />
+      <workItem from="1545820206575" duration="522000" />
+      <workItem from="1549456778179" duration="986000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90882000" />
+    <option name="totallyTimeSpent" value="92390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15616967" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1600257" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -291,7 +275,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32908162" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.18112245" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18112245" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39923468" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -325,39 +309,6 @@
     <entry file="file://$PROJECT_DIR$/src/SquareQuarter.java" />
     <entry file="file://$PROJECT_DIR$/src/GameObjectList.java" />
     <entry file="file://$PROJECT_DIR$/src/SquareChaser.java" />
-    <entry file="file://$PROJECT_DIR$/src/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-          <folding>
-            <element signature="method#Board#0;class#Board#0" />
-            <element signature="method#main#0;class#Board#0" />
-            <element signature="method#paint#0;class#Board#0" />
-            <element signature="method#drawStars#0;class#Board#0" />
-            <element signature="method#keyTyped#0;class#Board#0" />
-            <element signature="method#keyPressed#0;class#Board#0" />
-            <element signature="method#keyReleased#0;class#Board#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="method#Logic#0;class#Logic#0" />
-            <element signature="method#initiateLife#0;class#Logic#0" />
-            <element signature="method#checkAllObjects#0;class#Logic#0" />
-            <element signature="method#randMovement#0;class#Logic#0" />
-            <element signature="method#motivatedMovement#0;class#Logic#0" />
-            <element signature="method#reproduce#0;class#Logic#0" />
-            <element signature="method#splitSquare#0;class#Logic#0" />
-            <element signature="method#randomDir#0;class#Logic#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -382,6 +333,20 @@
           <folding>
             <element signature="method#SquareHalf#0;class#SquareHalf#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
