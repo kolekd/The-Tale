@@ -1,7 +1,7 @@
 # Wandering Squares
 This animation shows the life of 2 squares. (basically they run around and sometimes make babies)
 
-**Created using Java 9**  
+**Created using Java 8**  
 
 ## Screenshots:  
 
